@@ -91,7 +91,7 @@ var
 begin
     RandomLine := Floor(Random * MemoServers.Lines.Count);
     LabelStatus.Caption := MemoServers.Lines[RandomLine];
-    SaveStringToFile(MemoServers.Lines[RandomLine], SaveDialogConfig.FileName);
+    SaveStringToFile('connect ' + MemoServers.Lines[RandomLine], SaveDialogConfig.FileName);
 end;
 
 procedure TMainForm.FormCreate(Sender: TObject);
