@@ -1,0 +1,54 @@
+object MainForm: TMainForm
+  Left = 320
+  Height = 409
+  Top = 346
+  Width = 728
+  Caption = 'Server randomizer'
+  ClientHeight = 409
+  ClientWidth = 728
+  OnCreate = FormCreate
+  LCLVersion = '1.0.10.0'
+  object ToggleBox1: TToggleBox
+    Left = 8
+    Height = 39
+    Top = 368
+    Width = 716
+    Anchors = [akLeft, akRight, akBottom]
+    Caption = 'Select file'
+    OnChange = ToggleBox1Change
+    TabOrder = 0
+  end
+  object MemoServers: TMemo
+    Left = 8
+    Height = 321
+    Top = 8
+    Width = 716
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    Lines.Strings = (
+      'Enter server IP''s line by line.'
+    )
+    OnChange = MemoServersChange
+    TabOrder = 1
+  end
+  object LabelStatus: TLabel
+    Left = 8
+    Height = 18
+    Top = 342
+    Width = 263
+    Caption = 'Enter server IP''s and select config file to save.'
+    ParentColor = False
+  end
+  object SaveDialogConfig: TSaveDialog
+    FileName = 'connect_random.cfg'
+    Filter = '*.cfg'
+    left = 357
+    top = 107
+  end
+  object Interval: TTimer
+    Enabled = False
+    Interval = 3000
+    OnTimer = IntervalTimer
+    left = 137
+    top = 44
+  end
+end
